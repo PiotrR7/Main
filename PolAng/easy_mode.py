@@ -27,9 +27,20 @@ class EasyMode:
         odp6 = ""
 
     def Play():
+        EasyMode.Memory.window.eval('tk::PlaceWindow . center')
         EasyMode.Memory.window.resizable(False,False)
         EasyMode.Memory.window.title("")
-        EasyMode.Memory.window.geometry("1920x1080")
+
+        appwidth = 1920
+        appheight = 1080
+
+        screenwidth = EasyMode.Memory.window.winfo_screenwidth()
+        screenheight = EasyMode.Memory.window.winfo_screenheight()
+        
+        x = (screenwidth / 2) - (appwidth / 2)
+        y = (screenheight / 2) - (appheight / 2)
+
+        EasyMode.Memory.window.geometry(f'{appwidth}x{appheight}+{int(x)}+{int(y)}')
 
         pl = tk.StringVar()
         pl.set(EasyMode.Memory.pl)
@@ -194,6 +205,3 @@ class EasyMode:
         window.mainloop()
             
 from em_photos import *
-
-EasyMode.RandomWord()
-EasyMode.Play()
