@@ -5,7 +5,7 @@ class sql:
     fakewords = []
 
 def connect():
-    con = mysql.Connect(host='localhost', unix_socket='', user='root', passwd='', db='polang')
+    con = mysql.Connect(host='sql11.freesqldatabase.com', unix_socket='', user='sql11667150', passwd='bLZfXF6JCd', db='sql11667150')
     cur = con.cursor()
 
     cur.execute("select * from words")
